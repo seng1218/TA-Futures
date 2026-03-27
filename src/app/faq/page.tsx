@@ -13,7 +13,6 @@ const faqs = [
         <ul className="list-disc pl-5 space-y-2 text-slate-600 marker:text-brand">
           <li>1 copy of photocopied IC (front and back)</li>
           <li>3 months of latest active bank statement</li>
-          <li>1 set of application forms (forms can be obtained from <a href="http://tafutures.com.my/forms/" className="text-brand hover:underline font-medium" target="_blank" rel="noopener noreferrer">this link</a>)</li>
         </ul>
       </div>
     )
