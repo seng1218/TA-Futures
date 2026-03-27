@@ -19,7 +19,15 @@ export default function Footer() {
                 alt="TA Futures Logo"
                 width={180}
                 height={45}
-                className="h-10 w-auto object-contain"
+                className="h-10 w-auto object-contain dark:hidden"
+                quality={100}
+              />
+              <Image
+                src="/logo-dark.png"
+                alt="TA Futures Logo Dark"
+                width={180}
+                height={45}
+                className="h-10 w-auto object-contain hidden dark:block"
                 quality={100}
               />
             </Link>

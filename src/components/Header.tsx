@@ -32,7 +32,16 @@ export default function Header() {
               alt="TA Futures Logo"
               width={640}
               height={160}
-              className="h-14 md:h-16 w-auto object-contain dark:bg-slate-100 dark:p-1.5 dark:rounded-xl transition-all"
+              className="h-14 md:h-16 w-auto object-contain dark:hidden transition-all"
+              priority
+              quality={100}
+            />
+            <Image
+              src="/logo-dark.png"
+              alt="TA Futures Logo Dark"
+              width={640}
+              height={160}
+              className="h-14 md:h-16 w-auto object-contain hidden dark:block transition-all"
               priority
               quality={100}
             />
