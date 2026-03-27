@@ -29,7 +29,7 @@ export default function Futures101Page() {
 
       {/* Article Content */}
       <article className="max-w-4xl mx-auto px-6 space-y-12">
-        
+
         {/* Section 1 */}
         <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 md:p-12 shadow-sm dark:shadow-none transition-colors">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 border-b border-slate-100 dark:border-slate-800 pb-4 transition-colors">1. What is a Futures Contract?</h2>
@@ -39,9 +39,9 @@ export default function Futures101Page() {
           <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed transition-colors">
             Unlike trading physical stocks, you don't instantly "own" the asset when you buy a futures contract. Instead, you are placing an obligation to own it later. However, the vast majority of traders never take physical delivery—they offset (close) their positions before the expiration date to simply capture the difference in price.
           </p>
-          <div className="bg-gray-50 dark:bg-slate-800/50 border-l-4 border-brand p-6 rounded-r-xl transition-colors">
-            <h4 className="font-bold text-slate-900 mb-2">Real-World Example</h4>
-            <p className="text-sm text-slate-600">If you anticipate palm oil prices will rise due to supply constraints, you can "Buy" an FCPO contract today at RM 4,500. If the price jumps to RM 4,600 next week, you can sell your contract back to the market, locking in a RM 100 per tonne profit times the contract multiplier (25 tonnes).</p>
+          <div className="bg-slate-50 dark:bg-slate-800/50 border-l-4 border-brand p-6 rounded-r-xl transition-colors">
+            <h4 className="font-bold text-slate-900 dark:text-white mb-2 transition-colors">Real-World Example</h4>
+            <p className="text-sm text-slate-600 dark:text-slate-400 transition-colors">If you anticipate palm oil prices will rise due to supply constraints, you can "Buy" an FCPO contract today at RM 4,500. If the price jumps to RM 4,600 next week, you can sell your contract back to the market, locking in a RM 100 per tonne profit times the contract multiplier (25 tonnes).</p>
           </div>
         </div>
 
@@ -51,7 +51,7 @@ export default function Futures101Page() {
           <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed transition-colors">
             Leverage is what makes futures trading so capital efficient. You do not need the full notional value of the contract to trade it. Instead, you deposit a fraction of the total value to prove you can cover potential losses. This deposit is known as <strong>Margin</strong>.
           </p>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 mt-4">
             <div className="border border-slate-200 dark:border-slate-700 rounded-xl p-6 bg-slate-50 dark:bg-slate-800/50 transition-colors">
               <h4 className="font-bold text-slate-900 dark:text-white mb-2 transition-colors">Initial Margin</h4>
