@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function TechnicalAnalysisPage() {
   return (
-    <main className="min-h-screen bg-slate-50 pt-10 pb-24">
+    <main className="min-h-screen bg-slate-50 dark:bg-slate-950 pt-10 pb-24 transition-colors">
       {/* Back Navigation */}
       <div className="max-w-4xl mx-auto px-6 mb-8">
         <Link href="/academy" className="text-sm font-bold text-brand hover:text-brand-light transition-colors flex items-center">
@@ -19,10 +19,10 @@ export default function TechnicalAnalysisPage() {
       {/* Hero Header */}
       <section className="max-w-4xl mx-auto px-6 mb-12">
         <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 block">Module 3 • Advanced Level</span>
-        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-6 transition-colors">
           Systematic Technical Analysis
         </h1>
-        <p className="text-lg text-slate-600 leading-relaxed">
+        <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed transition-colors">
           While fundamentals determine the macro-trend over months, technical analysis dictates your entries and exits over hours and minutes. Master price action to pinpoint edge in highly liquid derivative assets.
         </p>
       </section>
@@ -31,12 +31,12 @@ export default function TechnicalAnalysisPage() {
       <article className="max-w-4xl mx-auto px-6 space-y-12">
         
         {/* Section 1 */}
-        <div className="bg-white border border-slate-200 rounded-3xl p-8 md:p-12 shadow-sm">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4 border-b border-slate-100 pb-4">1. The Supremacy of Price Action</h2>
-          <p className="text-slate-600 mb-6 leading-relaxed">
+        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 md:p-12 shadow-sm dark:shadow-none transition-colors">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 border-b border-slate-100 dark:border-slate-800 pb-4 transition-colors">1. The Supremacy of Price Action</h2>
+          <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed transition-colors">
             Most retail traders crowd their screens with lagging, complex algorithmic indicators. Professional day traders rely primarily on naked "Price Action"—the raw, unfiltered historical movement of price across candlestick charts.
           </p>
-          <ul className="list-disc pl-6 space-y-4 text-slate-600 mb-6">
+          <ul className="list-disc pl-6 space-y-4 text-slate-600 dark:text-slate-400 mb-6 transition-colors">
             <li><strong>Support & Resistance:</strong> Invisible psychological boundaries where immense institutional order flow sits. Support halts falling markets; Resistance halts rising markets.</li>
             <li><strong>Trend Structure:</strong> Identifying Higher Highs and Higher Lows (Uptrend) vs Lower Highs and Lower Lows (Downtrend). </li>
             <li><strong>Breakouts vs Fakeouts:</strong> A true breakout through heavy resistance must be backed by massive volume. A fakeout is a rapid sweep of liquidity before the price reverts into its previous range.</li>
@@ -44,31 +44,31 @@ export default function TechnicalAnalysisPage() {
         </div>
 
         {/* Section 2 */}
-        <div className="bg-white border border-slate-200 rounded-3xl p-8 md:p-12 shadow-sm">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4 border-b border-slate-100 pb-4">2. Volume & Open Interest (Derivatives Only)</h2>
-          <p className="text-slate-600 mb-6 leading-relaxed">
+        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 md:p-12 shadow-sm dark:shadow-none transition-colors">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 border-b border-slate-100 dark:border-slate-800 pb-4 transition-colors">2. Volume & Open Interest (Derivatives Only)</h2>
+          <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed transition-colors">
             In futures trading, you possess a massive advantage over spot markets: absolute data transparency. Every single futures exchange reports two critical metrics that act as lie-detectors for market moves.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 mt-4">
-            <div className="border border-slate-200 rounded-xl p-6 bg-slate-50">
-              <h4 className="font-bold text-slate-900 mb-2">Traded Volume</h4>
-              <p className="text-sm text-slate-600">The total number of contracts matching buyers and sellers during a specific timeframe. A massive price spike without accompanying volume is often a short-term anomaly.</p>
+            <div className="border border-slate-200 dark:border-slate-700 rounded-xl p-6 bg-slate-50 dark:bg-slate-800/50 transition-colors">
+              <h4 className="font-bold text-slate-900 dark:text-white mb-2 transition-colors">Traded Volume</h4>
+              <p className="text-sm text-slate-600 dark:text-slate-400 transition-colors">The total number of contracts matching buyers and sellers during a specific timeframe. A massive price spike without accompanying volume is often a short-term anomaly.</p>
             </div>
-            <div className="border border-slate-200 rounded-xl p-6 bg-slate-50">
-              <h4 className="font-bold text-slate-900 mb-2">Open Interest (OI)</h4>
-              <p className="text-sm text-slate-600">The total number of absolute active contracts that remain unsettled. If price is rising and OI is rising rapidly, new institutional money is entering the market, confirming the trend.</p>
+            <div className="border border-slate-200 dark:border-slate-700 rounded-xl p-6 bg-slate-50 dark:bg-slate-800/50 transition-colors">
+              <h4 className="font-bold text-slate-900 dark:text-white mb-2 transition-colors">Open Interest (OI)</h4>
+              <p className="text-sm text-slate-600 dark:text-slate-400 transition-colors">The total number of absolute active contracts that remain unsettled. If price is rising and OI is rising rapidly, new institutional money is entering the market, confirming the trend.</p>
             </div>
           </div>
         </div>
 
         {/* Section 3 */}
-        <div className="bg-white border border-slate-200 rounded-3xl p-8 md:p-12 shadow-sm">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4 border-b border-slate-100 pb-4">3. Moving Averages & Momentum</h2>
-          <p className="text-slate-600 mb-6 leading-relaxed">
+        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 md:p-12 shadow-sm dark:shadow-none transition-colors">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 border-b border-slate-100 dark:border-slate-800 pb-4 transition-colors">3. Moving Averages & Momentum</h2>
+          <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed transition-colors">
             While price action is paramount, moving averages (MAs) are widely respected by institutional algorithms, making them self-fulfilling prophecies.
           </p>
-          <div className="bg-slate-50 border-l-4 border-brand p-6 rounded-r-xl">
+          <div className="bg-slate-50 dark:bg-slate-800/50 border-l-4 border-brand p-6 rounded-r-xl transition-colors">
             <h4 className="font-bold text-slate-900 mb-2">The Exponential Moving Average (EMA)</h4>
             <p className="text-sm text-slate-600">
               Unlike Simple Moving Averages, the EMA places heavy mathematical weight on recent price action. Day traders extensively map the 9-EMA and 21-EMA across the 15-minute chart to gauge intraday momentum shifts and establish strict trailing stop-loss thresholds.
@@ -77,12 +77,12 @@ export default function TechnicalAnalysisPage() {
         </div>
 
         {/* Section 4 */}
-        <div className="bg-white border border-slate-200 rounded-3xl p-8 md:p-12 shadow-sm">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4 border-b border-slate-100 pb-4">4. The Depth of Market (DOM)</h2>
-          <p className="text-slate-600 mb-6 leading-relaxed">
+        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 md:p-12 shadow-sm dark:shadow-none transition-colors">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 border-b border-slate-100 dark:border-slate-800 pb-4 transition-colors">4. The Depth of Market (DOM)</h2>
+          <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed transition-colors">
             Technical analysis on a chart shows you the past. The DOM (often referred to as Level 2 order flow) shows you the immediate future. Accessing a live DOM allows you to visually see resting limit orders queued by other traders.
           </p>
-          <p className="text-slate-600 leading-relaxed mb-6">
+          <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6 transition-colors">
             If an aggressive seller dumps 600 FCPO contracts into the market, peering at the DOM allows you to instantly see if there is enough resting bid liquidity to absorb the shock, or if the price is guaranteed to crash sequentially through thin layers.
           </p>
           <div className="bg-slate-900 text-white rounded-2xl p-8 text-center mt-8">
