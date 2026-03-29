@@ -7,7 +7,7 @@ const leadSchema = z.object({
   fullName: z.string().min(2),
   email: z.string().email(),
   phone: z.string().min(8),
-  interest: z.enum(['FCPO', 'FEPO', 'FPKO', 'FKLI', 'FM70', 'FGLD', 'FSOY', 'Options', 'General', 'CME']),
+  interest: z.enum(['FCPO', 'FEPO', 'FPKO', 'FKLI', 'FM70', 'FGLD', 'FSOY', 'Options', 'General']),
 });
 
 export async function submitLead(formData: FormData) {
@@ -28,7 +28,7 @@ export async function submitLead(formData: FormData) {
     const { fullName, email, phone, interest } = validatedData.data;
     const resend = new Resend(process.env.RESEND_API_KEY);
 
-    const { data, error } = await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: 'Acme <onboarding@resend.dev>',
       to: 'senghoos121887@gmail.com',
       subject: `New Lead: ${fullName} (${interest})`,
@@ -51,8 +51,9 @@ export async function submitLead(formData: FormData) {
     }
 
     return { success: true };
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : 'Failed to process lead.';
     console.error("Unexpected Error submitting lead:", error);
-    return { success: false, error: error?.message || 'Failed to process lead.' };
+    return { success: false, error: errorMessage };
   }
 }

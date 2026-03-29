@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { ChevronDown, MessageCircleQuestion } from 'lucide-react';
-import Link from 'next/link';
 
 const faqs = [
   {
@@ -10,7 +9,7 @@ const faqs = [
     answer: (
       <div className="space-y-4">
         <p>Documents needed when opening a trading account are:</p>
-        <ul className="list-disc pl-5 space-y-2 text-slate-600 marker:text-brand">
+        <ul className="list-disc pl-5 space-y-2 text-slate-600 dark:text-slate-400 marker:text-brand">
           <li>1 copy of photocopied IC (front and back)</li>
           <li>3 months of latest active bank statement</li>
         </ul>
@@ -37,20 +36,20 @@ const faqs = [
     question: "What is the TAF hotline?",
     answer: (
       <div className="space-y-4">
-        <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
-          <p className="font-semibold text-slate-900 mb-1">Dealing</p>
-          <p className="text-slate-600">+603-20724832</p>
+        <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-xl border border-slate-100 dark:border-slate-700">
+          <p className="font-semibold text-slate-900 dark:text-white mb-1">Dealing</p>
+          <p className="text-slate-600 dark:text-slate-400">+603-20724832</p>
         </div>
-        <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
-          <p className="font-semibold text-slate-900 mb-2">ITD Support</p>
-          <ul className="space-y-2 text-slate-600">
+        <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-xl border border-slate-100 dark:border-slate-700">
+          <p className="font-semibold text-slate-900 dark:text-white mb-2">ITD Support</p>
+          <ul className="space-y-2 text-slate-600 dark:text-slate-400">
             <li className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-brand/50"></span>
-              <span className="font-medium text-slate-700">Day time (8:00 am – 6:00 am):</span> +603-21679799
+              <span className="font-medium text-slate-700 dark:text-slate-300">Day time (8:00 am – 6:00 pm):</span> +603-21679799
             </li>
             <li className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-slate-400"></span>
-              <span className="font-medium text-slate-700">Night time (8:00 pm – 6:00 pm):</span> +603-21679339
+              <span className="font-medium text-slate-700 dark:text-slate-300">Night time (8:00 pm – 6:00 am):</span> +603-21679339
             </li>
           </ul>
         </div>
@@ -63,14 +62,14 @@ const faqs = [
       <div className="space-y-4">
         <p>In TAF, we practise full-margin trading for all Bursa derivative products. The margin rates are in accordance with Bursa margin requirements.</p>
         <div className="bg-brand/5 p-4 rounded-xl border border-brand/10">
-          <p className="font-medium text-slate-900 mb-3">Currently, the required margin is as follows (it is subject to change):</p>
+          <p className="font-medium text-slate-900 dark:text-white mb-3">Currently, the required margin is as follows (it is subject to change):</p>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <li className="bg-white p-3 rounded-lg border border-slate-100 shadow-sm flex items-center justify-between">
-              <strong className="text-slate-900">FKLI</strong>
+            <li className="bg-white dark:bg-slate-800 p-3 rounded-lg border border-slate-100 dark:border-slate-700 shadow-sm flex items-center justify-between">
+              <strong className="text-slate-900 dark:text-white">FKLI</strong>
               <span className="text-brand font-mono font-medium">RM 5,000/lot</span>
             </li>
-            <li className="bg-white p-3 rounded-lg border border-slate-100 shadow-sm flex items-center justify-between">
-              <strong className="text-slate-900">FCPO</strong>
+            <li className="bg-white dark:bg-slate-800 p-3 rounded-lg border border-slate-100 dark:border-slate-700 shadow-sm flex items-center justify-between">
+              <strong className="text-slate-900 dark:text-white">FCPO</strong>
               <span className="text-brand font-mono font-medium">RM 9,000/lot</span>
             </li>
           </ul>
@@ -92,9 +91,9 @@ const faqs = [
       <div className="space-y-3">
         <p>The margin call is calculated based on the following calculations:</p>
         <div className="bg-slate-900 p-5 rounded-xl font-mono text-sm text-green-400 shadow-inner">
-          <span className="text-slate-400">// Equity balance formula</span><br />
+          <span className="text-slate-400">{"// Equity balance formula"}</span><br />
           Cash balance <span className="text-slate-300">-</span> unrealized losses <span className="text-slate-300">=</span> equity balance<br /><br />
-          <span className="text-slate-400">// Trigger condition</span><br />
+          <span className="text-slate-400">{"// Trigger condition"}</span><br />
           <span className="text-blue-400">If</span> (equity balance <span className="text-slate-300">&lt;</span> required margin) &#123;<br />
           &nbsp;&nbsp;triggerMarginCall();<br />
           &#125;
@@ -130,33 +129,33 @@ const faqs = [
     question: "How is the margin calculated during this trading session?",
     answer: (
       <div className="space-y-5">
-        <p className="text-slate-600">Any open position after 6:00 PM will be considered T+1 in night trading. It is because night trading is an extension of the trading session for the next trading day, not an extension of the current trading day. To better illustrate, here is the detailed explanation for FCPO:</p>
+        <p className="text-slate-600 dark:text-slate-400">Any open position after 6:00 PM will be considered T+1 in night trading. It is because night trading is an extension of the trading session for the next trading day, not an extension of the current trading day. To better illustrate, here is the detailed explanation for FCPO:</p>
 
         <div className="relative border-l-2 border-brand/20 ml-3 pl-6 space-y-6">
           <div className="relative">
-            <span className="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-white border-2 border-brand flex items-center justify-center"></span>
+            <span className="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-white dark:bg-slate-900 border-2 border-brand flex items-center justify-center"></span>
             <div className="inline-block px-3 py-1 bg-slate-900 text-white text-xs font-bold rounded-md mb-2 tracking-wide">6 FEB 2026</div>
-            <div className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm text-sm">
-              <span className="font-semibold text-slate-900 inline-block w-36">9:00 PM – 11:00 PM:</span>
-              <span className="text-slate-600">Consider session 1 for 7/2/2026 (any open position margin call from 6/2/2026 6:00 PM will +1 in margin ageing)</span>
+            <div className="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm text-sm">
+              <span className="font-semibold text-slate-900 dark:text-white inline-block w-36">9:00 PM – 11:00 PM:</span>
+              <span className="text-slate-600 dark:text-slate-400">Consider session 1 for 7/2/2026 (any open position margin call from 6/2/2026 6:00 PM will +1 in margin ageing)</span>
             </div>
           </div>
 
           <div className="relative">
-            <span className="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-white border-2 border-brand flex items-center justify-center"></span>
+            <span className="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-white dark:bg-slate-900 border-2 border-brand flex items-center justify-center"></span>
             <div className="inline-block px-3 py-1 bg-slate-900 text-white text-xs font-bold rounded-md mb-2 tracking-wide">7 FEB 2026</div>
             <div className="space-y-3">
-              <div className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm text-sm">
-                <span className="font-semibold text-slate-900 inline-block w-36">10:30 AM – 12:30 PM:</span>
-                <span className="text-slate-600">Consider session 2 for 7/2/2026 (Margin call T+1)</span>
+              <div className="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm text-sm">
+                <span className="font-semibold text-slate-900 dark:text-white inline-block w-36">10:30 AM – 12:30 PM:</span>
+                <span className="text-slate-600 dark:text-slate-400">Consider session 2 for 7/2/2026 (Margin call T+1)</span>
               </div>
-              <div className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm text-sm">
-                <span className="font-semibold text-slate-900 inline-block w-36">2:30 PM – 6:00 PM:</span>
-                <span className="text-slate-600">Consider session 3 (final session for 7/2/2026 and margin call T+1 before 6:00 PM)</span>
+              <div className="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm text-sm">
+                <span className="font-semibold text-slate-900 dark:text-white inline-block w-36">2:30 PM – 6:00 PM:</span>
+                <span className="text-slate-600 dark:text-slate-400">Consider session 3 (final session for 7/2/2026 and margin call T+1 before 6:00 PM)</span>
               </div>
-              <div className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm text-sm">
-                <span className="font-semibold text-slate-900 inline-block w-36">9:00 PM – 11:00 PM:</span>
-                <span className="text-slate-600">Consider session 1 for 8/2/2026 (any margin call position that carries from 6/2/2026 session 1 will +1 to the margin call ageing and become margin call T+2)</span>
+              <div className="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm text-sm">
+                <span className="font-semibold text-slate-900 dark:text-white inline-block w-36">9:00 PM – 11:00 PM:</span>
+                <span className="text-slate-600 dark:text-slate-400">Consider session 1 for 8/2/2026 (any margin call position that carries from 6/2/2026 session 1 will +1 to the margin call ageing and become margin call T+2)</span>
               </div>
             </div>
           </div>
@@ -170,7 +169,7 @@ const faqs = [
       <div className="space-y-4">
         <p>You may download the complaint form, fill in the details, and forward it to our complaint desk or print and drop it at TA Futures Sdn Bhd office.</p>
         <div className="flex flex-wrap gap-4 mt-2">
-          <a href="http://tafutures.com.my/csr-forms/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-4 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors font-medium text-sm">
+          <a href="http://tafutures.com.my/csr-forms/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-4 py-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors font-medium text-sm">
             Download Form
           </a>
           <a href="mailto:tafcomplaint@ta.com.my" className="inline-flex items-center px-4 py-2 bg-brand/10 text-brand rounded-lg hover:bg-brand/20 transition-colors font-medium text-sm">
@@ -187,11 +186,11 @@ const faqs = [
   {
     question: "What else can I do if I am not happy with the TAF internal complaint result?",
     answer: (
-      <div className="bg-orange-50 p-5 rounded-xl border border-orange-100">
-        <p className="text-orange-800 leading-relaxed mb-4">
+      <div className="bg-orange-50 dark:bg-orange-900/20 p-5 rounded-xl border border-orange-100 dark:border-orange-800/40">
+        <p className="text-orange-800 dark:text-orange-300 leading-relaxed mb-4">
           If you are dissatisfied with the outcome of our internal dispute resolution process, you may refer your complaint to the Financial Markets Ombudsman Service (FMOS) within six (6) months from the date of our final response letter.
         </p>
-        <a href="https://www.fmos.org.my/" className="inline-flex items-center text-orange-700 font-bold hover:text-orange-900 group" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.fmos.org.my/" className="inline-flex items-center text-orange-700 dark:text-orange-400 font-bold hover:text-orange-900 dark:hover:text-orange-200 group" target="_blank" rel="noopener noreferrer">
           Visit FMOS Website
           <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
         </a>
@@ -208,20 +207,20 @@ export default function FAQPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#FAFAFA] relative overflow-hidden py-16 md:py-24">
+    <main className="min-h-screen bg-[#FAFAFA] dark:bg-slate-950 relative overflow-hidden py-16 md:py-24">
       {/* Background Ornaments */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/3 pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16 md:mb-20">
-          <div className="inline-flex items-center justify-center p-4 bg-white shadow-sm border border-slate-100 rounded-2xl mb-6">
+          <div className="inline-flex items-center justify-center p-4 bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700 rounded-2xl mb-6">
             <MessageCircleQuestion className="w-8 h-8 text-brand" />
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-6">
             Frequently Asked Questions
           </h1>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
             Everything you need to know about opening an account, our trading platforms, margin requirements, and general services.
           </p>
         </div>
@@ -232,17 +231,17 @@ export default function FAQPage() {
             return (
               <div
                 key={index}
-                className={`bg-white rounded-2xl overflow-hidden transition-all duration-300 ${isOpen ? 'border-2 border-brand/20 shadow-xl shadow-brand/5' : 'border border-slate-200 hover:border-brand/40 hover:shadow-md'
+                className={`bg-white dark:bg-slate-900 rounded-2xl overflow-hidden transition-all duration-300 ${isOpen ? 'border-2 border-brand/20 shadow-xl shadow-brand/5' : 'border border-slate-200 dark:border-slate-700 hover:border-brand/40 hover:shadow-md'
                   }`}
               >
                 <button
                   onClick={() => toggleFAQ(index)}
                   className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
                 >
-                  <span className={`font-bold text-lg pr-8 transition-colors duration-300 ${isOpen ? 'text-brand' : 'text-slate-800'}`}>
+                  <span className={`font-bold text-lg pr-8 transition-colors duration-300 ${isOpen ? 'text-brand' : 'text-slate-800 dark:text-slate-100'}`}>
                     {faq.question}
                   </span>
-                  <div className={`p-2 rounded-full transition-colors flex-shrink-0 ${isOpen ? 'bg-brand/10 text-brand' : 'bg-slate-50 text-slate-400'}`}>
+                  <div className={`p-2 rounded-full transition-colors flex-shrink-0 ${isOpen ? 'bg-brand/10 text-brand' : 'bg-slate-50 dark:bg-slate-800 text-slate-400'}`}>
                     <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
                   </div>
                 </button>
@@ -250,7 +249,7 @@ export default function FAQPage() {
                   className={`px-6 transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-[1500px] pb-6 opacity-100' : 'max-h-0 opacity-0'
                     }`}
                 >
-                  <div className="text-slate-600 leading-relaxed border-t border-slate-100 pt-5">
+                  <div className="text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-100 dark:border-slate-700/50 pt-5">
                     {faq.answer}
                   </div>
                 </div>
@@ -260,13 +259,13 @@ export default function FAQPage() {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-20 text-center bg-white border border-slate-200 rounded-3xl p-10 md:p-14 shadow-sm relative overflow-hidden group">
+        <div className="mt-20 text-center bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-3xl p-10 md:p-14 shadow-sm relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-64 h-64 bg-brand/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none group-hover:bg-brand/20 transition-colors duration-700" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
           <div className="relative z-10">
-            <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Still have questions?</h3>
-            <p className="text-slate-600 mb-8 text-lg">
+            <h3 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4">Still have questions?</h3>
+            <p className="text-slate-600 dark:text-slate-400 mb-8 text-lg">
               Can&apos;t find the answer you&apos;re looking for? Please reach out to our dealing desk.
             </p>
             <a href="mailto:tafdealing@ta.com.my" className="inline-flex items-center justify-center px-8 py-4 bg-brand text-white rounded-xl font-bold hover:bg-brand/90 transition-all shadow-lg shadow-brand/20 hover:shadow-xl hover:-translate-y-1 border border-transparent">

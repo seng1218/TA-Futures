@@ -18,7 +18,7 @@ export default function MarketsPage() {
             Futures <span className="text-brand">Markets</span>
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed transition-colors">
-            Direct access to the world's leading derivatives exchanges. Review our comprehensive contract specifications, live margin requirements, and tick sizes to plan your next trade.
+            Direct access to the world&apos;s leading derivatives exchanges. Review our comprehensive contract specifications, live margin requirements, and tick sizes to plan your next trade.
           </p>
         </div>
       </section>

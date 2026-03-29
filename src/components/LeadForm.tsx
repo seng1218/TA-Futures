@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { submitLead } from '../app/actions/submitLead';
-import { CheckCircle2, FileText, PhoneCall, MailCheck } from 'lucide-react';
+import { submitLead } from '@/app/actions/submitLead';
+import { CheckCircle2, FileText, PhoneCall } from 'lucide-react';
 
 export default function LeadForm() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle');

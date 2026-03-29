@@ -37,21 +37,21 @@ export default function ContractTable() {
           <input
             type="text"
             placeholder="Search contracts (e.g., FCPO, Gold)..."
-            className="w-full bg-white border border-slate-300 rounded-xl py-3 px-4 text-slate-900 focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all placeholder:text-slate-400"
+            className="w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-xl py-3 px-4 text-slate-900 dark:text-white focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
 
         {/* Category Toggle Tabs */}
-        <div className="flex bg-white border border-slate-200 rounded-xl p-1 w-full md:w-auto overflow-x-auto">
+        <div className="flex bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-1 w-full md:w-auto overflow-x-auto">
           {['ALL', 'Commodity', 'Equity', 'Options'].map((tab) => (
             <button
               key={tab}
-              onClick={() => setFilter(tab as any)}
+              onClick={() => setFilter(tab as 'ALL' | 'Commodity' | 'Equity' | 'Options')}
               className={`flex-1 md:flex-none px-6 py-2 rounded-lg text-sm font-bold transition-all ${filter === tab
                 ? 'bg-brand text-white shadow-md'
-                : 'text-slate-500 hover:text-slate-900 hover:bg-slate-100'
+                : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-700'
                 }`}
             >
               {tab}
@@ -61,11 +61,11 @@ export default function ContractTable() {
       </div>
 
       {/* The Data Table */}
-      <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xl shadow-slate-200">
+      <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden shadow-xl shadow-slate-200 dark:shadow-none">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-gray-50 border-b border-slate-200">
+              <tr className="bg-gray-50 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
                 <th className="py-4 px-6 text-xs font-bold text-brand uppercase tracking-wider">Product</th>
                 <th className="py-4 px-6 text-xs font-bold text-brand uppercase tracking-wider">Symbol</th>
                 <th className="py-4 px-6 text-xs font-bold text-brand uppercase tracking-wider">Asset Class</th>
@@ -74,25 +74,25 @@ export default function ContractTable() {
                 <th className="py-4 px-6 text-xs font-bold text-brand uppercase tracking-wider">Trading Hours</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-200">
+            <tbody className="divide-y divide-slate-200 dark:divide-slate-700">
               {filteredData.length > 0 ? (
                 filteredData.map((contract) => (
-                  <tr key={contract.id} className="hover:bg-slate-50 transition-colors group">
-                    <td className="py-4 px-6 text-sm font-medium text-slate-900 group-hover:text-brand transition-colors">{contract.name}</td>
-                    <td className="py-4 px-6 text-sm font-mono text-slate-500">{contract.symbol}</td>
+                  <tr key={contract.id} className="hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors group">
+                    <td className="py-4 px-6 text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-brand transition-colors">{contract.name}</td>
+                    <td className="py-4 px-6 text-sm font-mono text-slate-500 dark:text-slate-400">{contract.symbol}</td>
                     <td className="py-4 px-6">
-                      <span className="text-xs font-bold px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 border border-emerald-200">
+                      <span className="text-xs font-bold px-2.5 py-1 rounded-md bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/50">
                         {contract.category}
                       </span>
                     </td>
-                    <td className="py-4 px-6 text-sm font-mono text-slate-700">{contract.margin}</td>
-                    <td className="py-4 px-6 text-sm font-mono text-slate-700">{contract.tickSize}</td>
-                    <td className="py-4 px-6 text-sm text-slate-600">{contract.hours}</td>
+                    <td className="py-4 px-6 text-sm font-mono text-slate-700 dark:text-slate-300">{contract.margin}</td>
+                    <td className="py-4 px-6 text-sm font-mono text-slate-700 dark:text-slate-300">{contract.tickSize}</td>
+                    <td className="py-4 px-6 text-sm text-slate-600 dark:text-slate-400">{contract.hours}</td>
                   </tr>
                 ))
               ) : (
                 <tr>
-                  <td colSpan={6} className="py-12 text-center text-slate-500">
+                  <td colSpan={6} className="py-12 text-center text-slate-500 dark:text-slate-400">
                     No contracts found matching your search.
                   </td>
                 </tr>

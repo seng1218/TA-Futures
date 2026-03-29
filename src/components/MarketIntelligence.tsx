@@ -23,7 +23,7 @@ async function getLatestNews(): Promise<NewsArticle[]> {
     const data = await res.json();
 
     // Map the live API data to match our component's required structure
-    return data.articles.slice(0, 4).map((article: any, index: number) => ({
+    return data.articles.slice(0, 4).map((article: { title: string; publishedAt: string; source: { name: string }; url: string }, index: number) => ({
       id: index,
       title: article.title,
       date: new Date(article.publishedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
