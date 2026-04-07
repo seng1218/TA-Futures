@@ -34,17 +34,17 @@ export default function Footer() {
             <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
               Next-generation trading infrastructure providing direct market access to Bursa Malaysia Derivatives (BMD) futures.
             </p>
-            {/* Social Links Placeholder */}
+            {/* Social Links */}
             <div className="flex space-x-4">
-              <div className="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-brand dark:hover:text-brand hover:border-brand/50 dark:hover:border-brand/50 transition-colors cursor-pointer">
+              <a href="#" aria-label="LinkedIn" className="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-brand dark:hover:text-brand hover:border-brand/50 dark:hover:border-brand/50 transition-colors">
                 <span className="font-bold text-sm">in</span>
-              </div>
-              <div className="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-brand dark:hover:text-brand hover:border-brand/50 dark:hover:border-brand/50 transition-colors cursor-pointer">
+              </a>
+              <a href="#" aria-label="X (Twitter)" className="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-brand dark:hover:text-brand hover:border-brand/50 dark:hover:border-brand/50 transition-colors">
                 <span className="font-bold text-sm">𝕏</span>
-              </div>
-              <div className="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-brand dark:hover:text-brand hover:border-brand/50 dark:hover:border-brand/50 transition-colors cursor-pointer">
+              </a>
+              <a href="#" aria-label="YouTube" className="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-brand dark:hover:text-brand hover:border-brand/50 dark:hover:border-brand/50 transition-colors">
                 <span className="font-bold text-sm">▶</span>
-              </div>
+              </a>
             </div>
           </div>
 

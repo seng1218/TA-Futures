@@ -52,8 +52,8 @@ export default async function MarketIntelligence() {
       {/* Section Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
         <div>
-          <h2 className="text-3xl font-extrabold text-slate-900 mb-3 tracking-tight">Market Intelligence</h2>
-          <p className="text-slate-600 text-lg">Live, actionable insights streaming directly to your terminal.</p>
+          <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white mb-3 tracking-tight">Market Intelligence</h2>
+          <p className="text-slate-600 dark:text-slate-400 text-lg">Live, actionable insights streaming directly to your terminal.</p>
         </div>
       </div>
 
@@ -62,7 +62,7 @@ export default async function MarketIntelligence() {
 
         {/* Featured Content (Spans 3 columns) */}
         <div className="lg:col-span-3 group cursor-pointer">
-          <div className="w-full aspect-video bg-white border border-slate-200 rounded-2xl overflow-hidden relative mb-4 shadow-xl shadow-slate-200 group-hover:border-brand/40 transition-all">
+          <div className="w-full aspect-video bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden relative mb-4 shadow-xl shadow-slate-200 dark:shadow-none group-hover:border-brand/40 transition-all">
             <iframe
               className="w-full h-full absolute top-0 left-0"
               /* This special URL always points to Bloomberg's 24/7 Live Stream */
@@ -78,15 +78,15 @@ export default async function MarketIntelligence() {
               Live Broadcast
             </span>
           </div>
-          <h3 className="text-2xl font-bold text-slate-900 group-hover:text-brand transition-colors">
+          <h3 className="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-brand transition-colors">
             Bloomberg Business LIVE
           </h3>
         </div>
 
         {/* Automated Live Reports List (Spans 2 columns) */}
-        <div className="lg:col-span-2 bg-white border border-slate-200 rounded-2xl p-6 shadow-lg flex flex-col">
-          <div className="flex justify-between items-center border-b border-slate-200 pb-4 mb-2">
-            <h4 className="text-sm font-bold text-slate-500 uppercase tracking-widest">Live News Feed</h4>
+        <div className="lg:col-span-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 shadow-lg dark:shadow-none flex flex-col">
+          <div className="flex justify-between items-center border-b border-slate-200 dark:border-slate-700 pb-4 mb-2">
+            <h4 className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Live News Feed</h4>
             <span className="text-xs font-mono text-brand flex items-center">
               <span className="w-1.5 h-1.5 rounded-full bg-brand animate-ping mr-1.5"></span>
               Auto-updating
@@ -95,19 +95,19 @@ export default async function MarketIntelligence() {
 
           <div className="space-y-0 flex-grow">
             {reports.map((report) => (
-              <a href={report.url} key={report.id} className="block group border-b border-slate-200 last:border-0 py-4 first:pt-4 last:pb-0">
+              <a href={report.url} key={report.id} className="block group border-b border-slate-200 dark:border-slate-700 last:border-0 py-4 first:pt-4 last:pb-0">
                 <div className="flex justify-between items-start mb-1">
                   <span className="text-xs font-bold text-brand">{report.category}</span>
-                  <span className="text-xs text-slate-500 font-mono">{report.date}</span>
+                  <span className="text-xs text-slate-500 dark:text-slate-400 font-mono">{report.date}</span>
                 </div>
-                <h5 className="text-base font-semibold text-slate-700 group-hover:text-slate-900 transition-colors leading-tight">
+                <h5 className="text-base font-semibold text-slate-700 dark:text-slate-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors leading-tight">
                   {report.title}
                 </h5>
               </a>
             ))}
           </div>
 
-          <button className="w-full mt-6 bg-slate-50 border border-slate-200 hover:border-brand/50 text-slate-600 hover:text-slate-900 py-3 rounded-xl font-bold text-sm transition-all">
+          <button className="w-full mt-6 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-brand/50 dark:hover:border-brand/50 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white py-3 rounded-xl font-bold text-sm transition-all">
             Subscribe to Daily Wrap
           </button>
         </div>
