@@ -58,7 +58,7 @@ export default function LeadForm() {
   }
 
   return (
-    <form action={clientAction} className="space-y-5 bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl">
+    <form action={clientAction} className="space-y-5 bg-white dark:bg-slate-900 p-5 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl">
       <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">Open an Account</h3>
 
       <input type="text" name="fullName" placeholder="Full Name (as per ID)" required

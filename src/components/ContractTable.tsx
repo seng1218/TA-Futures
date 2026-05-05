@@ -15,13 +15,16 @@ const contractData = [
   { id: 9, name: 'Options on FKLI', symbol: 'OKLI', category: 'Options', margin: 'Risk-based', tickSize: '0.1 pt (MYR 5.00)', hours: '08:45-12:45, 14:30-17:15, 21:00-02:30 (T+1)' },
 ];
 
+const TABS = ['ALL', 'Commodity', 'Equity', 'Options'] as const;
+type FilterType = typeof TABS[number];
+
 export default function ContractTable() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [filter, setFilter] = useState<'ALL' | 'Commodity' | 'Equity' | 'Options'>('ALL');
+  const [filter, setFilter] = useState<FilterType>('ALL');
 
-  // Filter logic
   const filteredData = contractData.filter((contract) => {
-    const matchesSearch = contract.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    const matchesSearch =
+      contract.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       contract.symbol.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = filter === 'ALL' || contract.category === filter;
     return matchesSearch && matchesCategory;
@@ -30,64 +33,70 @@ export default function ContractTable() {
   return (
     <div className="w-full">
       {/* Control Panel: Search & Filters */}
-      <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
+      <div className="flex flex-col gap-4 mb-6">
 
-        {/* Search Bar */}
-        <div className="w-full md:w-1/3 relative">
-          <input
-            type="text"
-            placeholder="Search contracts (e.g., FCPO, Gold)..."
-            className="w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-xl py-3 px-4 text-slate-900 dark:text-white focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
+        {/* Search Bar — full width on all sizes */}
+        <input
+          type="text"
+          placeholder="Search contracts (e.g., FCPO, Gold)..."
+          className="w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-xl py-3 px-4 text-slate-900 dark:text-white focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
 
-        {/* Category Toggle Tabs */}
-        <div className="flex bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-1 w-full md:w-auto overflow-x-auto">
-          {['ALL', 'Commodity', 'Equity', 'Options'].map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setFilter(tab as 'ALL' | 'Commodity' | 'Equity' | 'Options')}
-              className={`flex-1 md:flex-none px-6 py-2 rounded-lg text-sm font-bold transition-all ${filter === tab
-                ? 'bg-brand text-white shadow-md'
-                : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-700'
+        {/* Category Toggle Tabs — horizontally scrollable on mobile */}
+        <div className="overflow-x-auto -mx-1 px-1 pb-1">
+          <div className="flex bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-1 w-max min-w-full md:min-w-0 md:w-auto">
+            {TABS.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setFilter(tab)}
+                className={`flex-shrink-0 px-5 py-2 rounded-lg text-sm font-bold transition-all whitespace-nowrap ${
+                  filter === tab
+                    ? 'bg-brand text-white shadow-md'
+                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-700'
                 }`}
-            >
-              {tab}
-            </button>
-          ))}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
+
+      {/* Mobile hint */}
+      <p className="text-xs text-slate-400 dark:text-slate-500 mb-3 md:hidden flex items-center gap-1">
+        <span>←</span> Scroll table horizontally to see all columns <span>→</span>
+      </p>
 
       {/* The Data Table */}
       <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden shadow-xl shadow-slate-200 dark:shadow-none">
         <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse">
+          <table className="w-full text-left border-collapse" style={{ minWidth: '700px' }}>
             <thead>
               <tr className="bg-gray-50 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
-                <th className="py-4 px-6 text-xs font-bold text-brand uppercase tracking-wider">Product</th>
-                <th className="py-4 px-6 text-xs font-bold text-brand uppercase tracking-wider">Symbol</th>
-                <th className="py-4 px-6 text-xs font-bold text-brand uppercase tracking-wider">Asset Class</th>
-                <th className="py-4 px-6 text-xs font-bold text-brand uppercase tracking-wider">Initial Margin</th>
-                <th className="py-4 px-6 text-xs font-bold text-brand uppercase tracking-wider">Tick Size</th>
-                <th className="py-4 px-6 text-xs font-bold text-brand uppercase tracking-wider">Trading Hours</th>
+                <th className="py-4 px-4 md:px-6 text-xs font-bold text-brand uppercase tracking-wider">Product</th>
+                <th className="py-4 px-4 md:px-6 text-xs font-bold text-brand uppercase tracking-wider">Symbol</th>
+                <th className="py-4 px-4 md:px-6 text-xs font-bold text-brand uppercase tracking-wider">Asset Class</th>
+                <th className="py-4 px-4 md:px-6 text-xs font-bold text-brand uppercase tracking-wider">Initial Margin</th>
+                <th className="py-4 px-4 md:px-6 text-xs font-bold text-brand uppercase tracking-wider">Tick Size</th>
+                <th className="py-4 px-4 md:px-6 text-xs font-bold text-brand uppercase tracking-wider">Trading Hours</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200 dark:divide-slate-700">
               {filteredData.length > 0 ? (
                 filteredData.map((contract) => (
                   <tr key={contract.id} className="hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors group">
-                    <td className="py-4 px-6 text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-brand transition-colors">{contract.name}</td>
-                    <td className="py-4 px-6 text-sm font-mono text-slate-500 dark:text-slate-400">{contract.symbol}</td>
-                    <td className="py-4 px-6">
-                      <span className="text-xs font-bold px-2.5 py-1 rounded-md bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/50">
+                    <td className="py-4 px-4 md:px-6 text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-brand transition-colors whitespace-nowrap">{contract.name}</td>
+                    <td className="py-4 px-4 md:px-6 text-sm font-mono text-slate-500 dark:text-slate-400 whitespace-nowrap">{contract.symbol}</td>
+                    <td className="py-4 px-4 md:px-6">
+                      <span className="text-xs font-bold px-2.5 py-1 rounded-md bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/50 whitespace-nowrap">
                         {contract.category}
                       </span>
                     </td>
-                    <td className="py-4 px-6 text-sm font-mono text-slate-700 dark:text-slate-300">{contract.margin}</td>
-                    <td className="py-4 px-6 text-sm font-mono text-slate-700 dark:text-slate-300">{contract.tickSize}</td>
-                    <td className="py-4 px-6 text-sm text-slate-600 dark:text-slate-400">{contract.hours}</td>
+                    <td className="py-4 px-4 md:px-6 text-sm font-mono text-slate-700 dark:text-slate-300 whitespace-nowrap">{contract.margin}</td>
+                    <td className="py-4 px-4 md:px-6 text-sm font-mono text-slate-700 dark:text-slate-300 whitespace-nowrap">{contract.tickSize}</td>
+                    <td className="py-4 px-4 md:px-6 text-sm text-slate-600 dark:text-slate-400 min-w-[200px]">{contract.hours}</td>
                   </tr>
                 ))
               ) : (

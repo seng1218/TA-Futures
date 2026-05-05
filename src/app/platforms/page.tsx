@@ -10,7 +10,7 @@ export default function PlatformsPage() {
   return (
     <main className="min-h-screen bg-white dark:bg-slate-950 pt-10 pb-24 transition-colors">
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-6 mb-20 text-center">
+      <section className="max-w-7xl mx-auto px-6 mb-10 md:mb-20 text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-6 transition-colors">
           Advance <span className="text-brand">Platform</span>
         </h1>
@@ -23,7 +23,7 @@ export default function PlatformsPage() {
         
         {/* Flagship: QST Desktop Terminal (Full Width) */}
         <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden shadow-xl shadow-slate-200/50 dark:shadow-none hover:border-brand/40 dark:hover:border-brand/40 transition-all group flex flex-col lg:flex-row">
-          <div className="p-10 lg:p-16 lg:w-1/2 flex flex-col justify-center">
+          <div className="p-6 sm:p-10 lg:p-16 lg:w-1/2 flex flex-col justify-center">
             <span className="text-xs font-bold text-brand uppercase tracking-widest mb-4 block">Flagship Terminal</span>
             <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white mb-4 group-hover:text-brand transition-colors">QST Desktop</h2>
             <p className="text-slate-600 dark:text-slate-400 mb-10 leading-relaxed text-lg transition-colors">
@@ -47,7 +47,7 @@ export default function PlatformsPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           
           {/* QST Web Lite */}
-          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-10 hover:border-brand/40 dark:hover:border-brand/40 transition-all shadow-xl shadow-slate-200/50 dark:shadow-none group flex flex-col justify-between">
+          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 hover:border-brand/40 dark:hover:border-brand/40 transition-all shadow-xl shadow-slate-200/50 dark:shadow-none group flex flex-col justify-between">
             <div>
               <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 block">Browser Access</span>
               <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white mb-4 group-hover:text-brand transition-colors">QST Web Lite</h2>
@@ -69,7 +69,7 @@ export default function PlatformsPage() {
           </div>
 
           {/* TAF Mobile */}
-          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-10 hover:border-brand/40 dark:hover:border-brand/40 transition-all shadow-xl shadow-slate-200/50 dark:shadow-none group flex flex-col justify-between">
+          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 hover:border-brand/40 dark:hover:border-brand/40 transition-all shadow-xl shadow-slate-200/50 dark:shadow-none group flex flex-col justify-between">
             <div>
               <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 block">On The Go</span>
               <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white mb-4 group-hover:text-brand transition-colors">TAF Mobile</h2>

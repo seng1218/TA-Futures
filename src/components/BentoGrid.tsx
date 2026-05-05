@@ -30,10 +30,10 @@ export default function BentoGrid() {
       </div>
 
       {/* Grid Layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 auto-rows-[minmax(250px,auto)]">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
         {/* Tile 1: Interactive Margin Calculator (Spans 2 columns) */}
-        <div className="col-span-1 lg:col-span-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 hover:border-brand/40 transition-all duration-300 shadow-xl shadow-slate-200 dark:shadow-none">
+        <div className="col-span-1 lg:col-span-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-8 hover:border-brand/40 transition-all duration-300 shadow-xl shadow-slate-200 dark:shadow-none">
            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-8 flex items-center">
              <span className="bg-brand/10 text-brand p-2.5 rounded-xl mr-4 border border-brand/20">
                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
@@ -80,7 +80,7 @@ export default function BentoGrid() {
         </div>
 
         {/* Tile 2: Platform Access */}
-        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 flex flex-col hover:border-brand/40 transition-all duration-300 shadow-xl shadow-slate-200 dark:shadow-none">
+        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-8 flex flex-col hover:border-brand/40 transition-all duration-300 shadow-xl shadow-slate-200 dark:shadow-none">
            <div>
              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight">TAF Mobile</h3>
              <p className="text-sm text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">Trade FCPO and all BMD futures on the go. Scan to instantly download the TAF Mobile app.</p>

@@ -18,16 +18,22 @@ export default function SpreadTable() {
         <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">CPO Intracommodity Spread Charge</h2>
         <p className="text-slate-600 dark:text-slate-400 mt-1">Matrix for calculating margin spread charges across different contract months.</p>
       </div>
+
+      {/* Mobile scroll hint */}
+      <p className="text-xs text-slate-400 dark:text-slate-500 mb-3 md:hidden flex items-center gap-1">
+        <span>←</span> Scroll horizontally to view full matrix <span>→</span>
+      </p>
+
       <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden shadow-xl shadow-slate-200 dark:shadow-none">
         <div className="overflow-x-auto">
-          <table className="w-full text-center border-collapse">
+          <table className="w-full text-center border-collapse" style={{ minWidth: '620px' }}>
             <thead>
               <tr className="bg-gray-50 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
-                <th className="py-4 px-6 text-xs font-bold text-brand uppercase tracking-wider text-left">
+                <th className="py-4 px-4 text-xs font-bold text-brand uppercase tracking-wider text-left sticky left-0 bg-gray-50 dark:bg-slate-800 whitespace-nowrap">
                   Contract Month
                 </th>
                 {headers.map((h, i) => (
-                  <th key={i} className="py-4 px-4 text-xs font-bold text-brand uppercase tracking-wider">
+                  <th key={i} className="py-4 px-3 text-xs font-bold text-brand uppercase tracking-wider whitespace-nowrap">
                     {h}
                   </th>
                 ))}
@@ -36,11 +42,11 @@ export default function SpreadTable() {
             <tbody className="divide-y divide-slate-200 dark:divide-slate-700">
               {rows.map((row, rIdx) => (
                 <tr key={rIdx} className="hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors group">
-                  <td className="py-4 px-6 text-sm font-bold text-slate-900 dark:text-slate-100 text-left group-hover:text-brand transition-colors">
+                  <td className="py-4 px-4 text-sm font-bold text-slate-900 dark:text-slate-100 text-left group-hover:text-brand transition-colors sticky left-0 bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/60 whitespace-nowrap">
                     {row.label}
                   </td>
                   {row.cells.map((cell, cIdx) => (
-                    <td key={cIdx} className={`py-4 px-4 text-sm font-medium ${cell ? 'text-slate-700 dark:text-slate-300' : 'bg-slate-50/50 dark:bg-slate-800/40 text-slate-300 dark:text-slate-600'}`}>
+                    <td key={cIdx} className={`py-4 px-3 text-sm font-medium whitespace-nowrap ${cell ? 'text-slate-700 dark:text-slate-300' : 'bg-slate-50/50 dark:bg-slate-800/40 text-slate-300 dark:text-slate-600'}`}>
                       {cell ? cell : '-'}
                     </td>
                   ))}

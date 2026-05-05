@@ -10,7 +10,7 @@ export default function AboutUsPage() {
       <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[100px] -translate-y-1/2 -translate-x-1/3 pointer-events-none" />
       
       {/* Hero Section */}
-      <section className="relative z-10 pt-16 pb-12 px-6 max-w-7xl mx-auto text-center">
+      <section className="relative z-10 pt-10 md:pt-16 pb-12 px-6 max-w-7xl mx-auto text-center">
         <div className="inline-flex items-center justify-center p-4 bg-white dark:bg-slate-900 shadow-sm border border-slate-100 dark:border-slate-800 rounded-2xl mb-6 transition-colors">
           <Building2 className="w-8 h-8 text-brand" />
         </div>
@@ -31,7 +31,7 @@ export default function AboutUsPage() {
       <section className="relative z-10 py-10 px-6 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           {/* Vision Card */}
-          <div className="bg-white dark:bg-slate-900 p-10 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-xl shadow-brand/5 dark:shadow-none group hover:-translate-y-1 transition-transform duration-300">
+          <div className="bg-white dark:bg-slate-900 p-6 sm:p-10 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-xl shadow-brand/5 dark:shadow-none group hover:-translate-y-1 transition-transform duration-300">
             <div className="w-16 h-16 rounded-2xl bg-brand/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
               <Eye className="w-8 h-8 text-brand" />
             </div>
@@ -42,7 +42,7 @@ export default function AboutUsPage() {
           </div>
 
           {/* Mission Card */}
-          <div className="bg-slate-900 p-10 rounded-3xl border border-slate-800 shadow-2xl shadow-slate-900/20 group hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden">
+          <div className="bg-slate-900 p-6 sm:p-10 rounded-3xl border border-slate-800 shadow-2xl shadow-slate-900/20 group hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-brand/30 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
             
             <div className="relative z-10">
@@ -63,7 +63,7 @@ export default function AboutUsPage() {
       {/* Core Values Section */}
       <section className="relative z-10 py-16 px-6 bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 mt-8 pb-24 transition-colors">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
+          <div className="text-center mb-12 md:mb-20">
             <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-6 uppercase transition-colors">
               CORE VALUES
             </h2>
