@@ -1,4 +1,5 @@
 // Notice we are NOT using 'use client' here. This runs securely on the server.
+import MotionSection from './MotionSection';
 
 // 1. Define the shape of our News API data
 interface NewsArticle {
@@ -48,7 +49,7 @@ export default async function MarketIntelligence() {
   const reports = await getLatestNews();
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-16">
+    <MotionSection className="max-w-7xl mx-auto px-6 py-16">
       {/* Section Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
         <div>
@@ -107,12 +108,9 @@ export default async function MarketIntelligence() {
             ))}
           </div>
 
-          <button className="w-full mt-6 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-brand/50 dark:hover:border-brand/50 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white py-3 rounded-xl font-bold text-sm transition-all">
-            Subscribe to Daily Wrap
-          </button>
         </div>
 
       </div>
-    </section>
+    </MotionSection>
   );
 }

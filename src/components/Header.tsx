@@ -101,7 +101,7 @@ export default function Header() {
           </nav>
 
           <div className="mt-12 flex flex-col space-y-4">
-            <Link href="/" onClick={closeMobileMenu} className="w-full text-center border-2 border-brand text-brand px-5 py-4 rounded-xl text-lg font-bold transition-all hover:bg-brand hover:text-white block">
+            <Link href="/#open-account" onClick={closeMobileMenu} className="w-full text-center border-2 border-brand text-brand px-5 py-4 rounded-xl text-lg font-bold transition-all hover:bg-brand hover:text-white block">
               Open an Account
             </Link>
             <a href="https://estatement.taonline.com.my/" target="_blank" rel="noopener noreferrer" className="w-full text-center bg-brand hover:bg-brand-light text-white px-5 py-4 rounded-xl text-lg font-bold transition-all shadow-lg shadow-brand/20 block" onClick={closeMobileMenu}>

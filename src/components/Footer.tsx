@@ -78,7 +78,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <span className="text-brand mr-2">✉</span>
-                <a href="mailto:info@tafutures.com.my" className="hover:text-slate-900 dark:hover:text-white transition-colors">tafdealing@ta.com.my</a>
+                <a href="mailto:tafdealing@ta.com.my" className="hover:text-slate-900 dark:hover:text-white transition-colors">tafdealing@ta.com.my</a>
               </li>
               <li className="flex items-center">
                 <span className="text-brand mr-2">☏</span>

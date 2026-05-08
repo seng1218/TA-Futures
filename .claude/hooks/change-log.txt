@@ -1,0 +1,19 @@
+[2026-05-08 15:07:32] Write: D:\taf-modern\.claude\hooks\change-logger.py
+[2026-05-08 15:07:37] Edit: D:\taf-modern\src\components\Footer.tsx
+[2026-05-08 15:07:40] Edit: D:\taf-modern\src\components\HeroSection.tsx
+[2026-05-08 15:07:45] Edit: D:\taf-modern\src\components\Header.tsx
+[2026-05-08 15:07:48] Edit: D:\taf-modern\src\app\actions\submitLead.ts
+[2026-05-08 15:08:00] Edit: D:\taf-modern\src\app\actions\submitLead.ts
+[2026-05-08 15:08:06] Edit: D:\taf-modern\src\app\layout.tsx
+[2026-05-08 15:08:12] Edit: D:\taf-modern\src\components\MarketIntelligence.tsx
+[2026-05-08 15:08:16] Edit: D:\taf-modern\src\components\ProductsSection.tsx
+[2026-05-08 15:08:19] Bash: cd "D:\taf-modern" && git diff --stat
+[2026-05-08 15:45:12] Bash: git diff HEAD -- next.config.ts package.json src/app/actions/submitLead.ts src/app/layout.tsx 2>/dev/null
+[2026-05-08 15:45:31] Bash: git diff --stat HEAD 2>/dev/null | head -50
+[2026-05-08 15:45:40] Bash: git diff HEAD -- src/app/about-us/page.tsx src/app/faq/page.tsx src/app/terms-conditions/page.tsx src/app/disclaimer/page.tsx 2>/dev/null
+[2026-05-08 15:46:01] Bash: git diff HEAD -- src/app/globals.css src/app/page.tsx src/components/BentoGrid.tsx src/components/WhyTAF.tsx src/components/ProductsSection.tsx 2>/dev/null
+[2026-05-08 15:46:44] Bash: git diff HEAD -- src/app/academy/page.tsx src/app/markets/page.tsx src/app/platforms/page.tsx 2>/dev/null
+[2026-05-08 15:47:50] Bash: git diff HEAD -- src/components/ContractTable.tsx src/components/SpreadTable.tsx src/components/Header.tsx src/components/Footer.tsx src/components/MarketIntelligence.tsx 2>/dev/null
+[2026-05-08 15:49:34] Bash: ls C:/Users/HMS/.claude/plugins/ 2>/dev/null || echo "No plugins dir"
+[2026-05-08 15:50:08] Bash: cat C:/Users/HMS/.claude/plugins/installed_plugins.json 2>/dev/null
+[2026-05-08 16:09:02] Edit: D:\taf-modern\web.config

@@ -6,7 +6,20 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "TA Futures | Next-Generation Trading Infrastructure",
-  description: "Direct market access to Bursa Malaysia Derivatives and CME Globex.",
+  description: "Direct market access to Bursa Malaysia Derivatives (BMD) Futures and Options. Licensed by Securities Commission Malaysia.",
+  openGraph: {
+    title: "TA Futures | Next-Generation Trading Infrastructure",
+    description: "Direct market access to Bursa Malaysia Derivatives (BMD) Futures and Options. Licensed by Securities Commission Malaysia.",
+    url: "https://www.tafutures.com.my",
+    siteName: "TA Futures",
+    locale: "en_MY",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TA Futures | Next-Generation Trading Infrastructure",
+    description: "Direct market access to Bursa Malaysia Derivatives (BMD) Futures and Options. Licensed by Securities Commission Malaysia.",
+  },
 };
 
 export default function RootLayout({

@@ -4,12 +4,12 @@ export default function SpreadTable() {
   const rows = [
     { label: '2', cells: [null, null, null, null, null, null, null, null] },
     { label: '3', cells: ['600', null, null, null, null, null, null, null] },
-    { label: '4', cells: ['1,000', '500', null, null, null, null, null, null] },
+    { label: '4', cells: ['1,200', '500', null, null, null, null, null, null] },
     { label: '5', cells: ['1,500', '1,000', '700', null, null, null, null, null] },
-    { label: '6 - 7', cells: ['1,800', '1,600', '1,500', '1,000', '500', null, null, null] },
-    { label: '8 - 9', cells: ['2,500', '2,200', '2,000', '1,600', '1,200', '500', null, null] },
-    { label: '10 - 15', cells: ['3,900', '3,800', '3,500', '3,200', '2,900', '2,100', '1,600', null] },
-    { label: '16 - 24', cells: ['4,400', '4,000', '3,700', '3,400', '3,100', '2,400', '1,900', '1,200'] },
+    { label: '6 - 7', cells: ['1,800', '1,600', '1,500', '1,000', '600', null, null, null] },
+    { label: '8 - 9', cells: ['2,500', '2,200', '2,000', '1,600', '1,200', '600', null, null] },
+    { label: '10 - 15', cells: ['4,300', '4,200', '3,700', '3,200', '3,000', '2,500', '2,400', null] },
+    { label: '16 - 24', cells: ['4,400', '4,300', '3,800', '3,400', '3,100', '2,600', '2,500', '1,400'] },
   ];
 
   return (

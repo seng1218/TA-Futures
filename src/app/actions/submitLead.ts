@@ -10,6 +10,15 @@ const leadSchema = z.object({
   interest: z.enum(['FCPO', 'FEPO', 'FPKO', 'FKLI', 'FM70', 'FGLD', 'FSOY', 'Options', 'General']),
 });
 
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;');
+}
+
 export async function submitLead(formData: FormData) {
   const rawData = {
     fullName: formData.get('fullName'),
@@ -31,15 +40,15 @@ export async function submitLead(formData: FormData) {
     const { error } = await resend.emails.send({
       from: 'Acme <onboarding@resend.dev>',
       to: 'senghoos121887@gmail.com',
-      subject: `New Lead: ${fullName} (${interest})`,
+      subject: `New Lead: ${escapeHtml(fullName)} (${interest})`,
       html: `
         <h2>New Account Opening Request</h2>
         <p>A new prospect has submitted their details via the TA Futures website:</p>
         <ul>
-          <li><strong>Full Name:</strong> ${fullName}</li>
-          <li><strong>Email Address:</strong> ${email}</li>
-          <li><strong>Phone Number:</strong> ${phone}</li>
-          <li><strong>Primary Interest:</strong> ${interest}</li>
+          <li><strong>Full Name:</strong> ${escapeHtml(fullName)}</li>
+          <li><strong>Email Address:</strong> ${escapeHtml(email)}</li>
+          <li><strong>Phone Number:</strong> ${escapeHtml(phone)}</li>
+          <li><strong>Primary Interest:</strong> ${escapeHtml(interest)}</li>
         </ul>
         <p>Please contact them ASAP.</p>
       `
