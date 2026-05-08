@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
-const sectionVariants = {
+const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 30, rotateX: 10 },
   visible: (i: number) => ({
     opacity: 1, y: 0, rotateX: 0,

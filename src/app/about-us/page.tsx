@@ -1,11 +1,11 @@
 "use client";
 
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { useRef } from 'react';
 import { use3DTilt } from '@/components/use3DTilt';
 import { ShieldCheck, Users, Award, Lightbulb, Globe, Target, Eye, Building2 } from 'lucide-react';
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, rotateX: 60, y: 40 },
   visible: (i: number) => ({
     opacity: 1, rotateX: 0, y: 0,

@@ -3,7 +3,7 @@
 import { useState, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { use3DTilt } from './use3DTilt';
 
 const marginData = {
@@ -16,7 +16,7 @@ const marginData = {
   FSOY: { name: 'Soybean Oil Futures (FSOY)', margin: 2500, currency: 'USD' },
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, rotateX: 20, y: 40 },
   visible: (i: number) => ({
     opacity: 1, rotateX: 0, y: 0,
